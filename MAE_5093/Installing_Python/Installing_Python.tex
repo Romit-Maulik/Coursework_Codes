@@ -1,0 +1,79 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper, margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{listings}
+
+\title{Installing Python on Windows 10}
+\author{Romit Maulik}
+\date{September 2017}
+
+\begin{document}
+
+\maketitle
+
+Different individuals have different preferences when it comes to their development environment of choice. Personally, I have found the PyCharm IDE most intuitive and productive for my needs. This document will help a new Python user install Python (2.X or 3.X) on their Windows machine, integrate it with PyCharm, download commonly used discrete math libraries (Numpy, Scipy) and plotting tools (Matplotlib). Finally, we can implement a 1D Heat equation problem using the method of finite differences by using the aforementioned libraries in PyCharm. A video detailing the installation of Python and PyCharm can be found at \url{https://www.youtube.com/watch?v=puBXxzcWJIQ}.
+
+\section{Setting up Python}
+
+Assuming you have no distribution of Python on your Windows machine at this point of time, the following steps can help you install Python on your system:
+\begin{itemize}
+
+  \item Go to \url{https://www.python.org/downloads/} and download your choice of a Python release. This example is built using Python 2.7.13 but should work with no major issues for Python 3.6.2 (most up to date releases at the time of the drafting of this document). You will now have a *.msi file in your choice of the download directory.
+
+  \item The *.msi file is essentially an executable installer and will proceed to install python (2.X or 3.X) to a desired destination (preferably C:). An \textbf{important} point to remember here is to add Python to PATH. This will save us a lot of headache later. You should then receive a ``Setup was successful'' message after this.
+
+  \item Validate the proper installation of Python by opening up a Command Prompt in Windows and typing \texttt{python}. You should receive a message showing your Python release as well as the architecture of choice (win32 or win64). You may exit this command line by typing \texttt{exit()}.
+
+  \item Now we install PyCharm. Go to \url{https://www.jetbrains.com/pycharm-edu/download/#section=windows} to install the free community edition for PyCharm (currently version 4.0). Run the installer and follow the prompts (make sure to associate .py extensions with PyCharm).
+  \item Run PyCharm (search for it in your main menu). For this first time, it will ask you if you want to import settings: I assume that you have no settings to import at this time and you can proceed without any import. It then allows you to edit the Keymap scheme and IDE theme (mainly for aesthetics). You can proceed with the default or use the preview to choose something you fancy.
+  \item You should now obtain a screen which says ``PyCharm Community Edition'' with options for creating or opening projects. At this stage, click the `Configure' button and go to `Settings'.
+  \item Go to the option title `Project Interpreter'. Click the settings icon and then `Add Local' and navigate to your installation of Python and point to `python.exe'. If everything has worked so far then we are in good shape.
+\end{itemize}
+
+\section{Hello World!}
+
+\begin{itemize}
+  \item Click to open PyCharm and create a new project with an appropriate directory name (avoid starting this with numbers) at a location of your choice.
+  \item On the left side of your window you will have a panel showing a folder icon with your project name and `External Libraries'. Right click on the folder for your project name and select `new -> Python File'.
+  \item Name your file Hello.py . You should now have the screen turn into a different color letting you type on it.
+  \item Type \texttt{print("Hello world!")} and run the file by right clicking and selecting run. If everything has been done correctly, you should now have the console show you `Hello world!'.
+\end{itemize}
+
+\section{Installing Numpy and Matplotlib}
+
+By default your installation of Python should come with the `pip' installer. With this tool - you may install any libraries of your choosing from \url{https://pypi.python.org/pypi}. At the time of the making of this document there were 117060 packages here. There is a very very high probability that whatever tool you need is already stored on these repositories.
+
+\begin{itemize}
+  \item Open up a Windows command prompt or powershell and type and enter \texttt{pip install --upgrade pip}. This upgrades the pip installer to the latest version before using to download libraries from the online repository.
+  \item You can now type and enter \texttt{python -m pip install numpy} which installs numpy on your machine. You can follow this up with \texttt{python -m pip install matplotlib} which installs matplotlib for plotting.
+  \item In a command prompt run Python by typing and entering \texttt{python}. Once the python command line is active, type and enter \texttt{import numpy as np}, followed by \texttt{np.version.version} which should give you the version of numpy you have installed.
+  \item Exit the python command line by type \texttt{exit()}. You are now ready to do scientific computing (for the most part) in Python!
+\end{itemize}
+
+\section{Testing Numpy and Matplotlib}
+
+Follow the steps in Section `Hello World!' to create a new project and paste the following code into a new python file.
+
+\begin{lstlisting}
+import numpy as np
+import matplotlib.pyplot as plt
+
+y = np.random.rand(10)
+x = np.linspace(0,9,10)
+
+plt.figure(1)
+plt.interactive(False)
+plt.xlabel('x')
+plt.ylabel('y')
+plt.title('My First Scatter')
+plt.scatter(x, y)
+plt.show()
+
+\end{lstlisting}
+
+If you obtain a scatter plot of random numbers you are good to go.
+
+\end{document}

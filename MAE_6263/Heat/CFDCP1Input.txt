@@ -1,0 +1,21 @@
+100					!nspace;Number of grid points in each direction
+1d0					!tl;	Total length in each direction of square domain
+0.25d0				!gm;	Stability Factor (gamma)
+0.2d0				!ft;	Final Time
+1d0					!alpha;	Diffusivity
+1					!isol;	Solver - [0] - For explicit [1] - For Implicit
+100					!gsnt; 	Number of Iterative Steps in GS or Jacobi
+5					!fostep;File output every this percent of total timesteps(Choose multiples of five)
+1					!insol;	Type of Implicit Solver - Inversion [0] or Iterative [1]
+0					!msol; 	Matrix Inversion Solver [0] - jacobi [1] - Gauss Seidel
+10d-4				!tol;	Tolerance for convergence
+
+
+
+
+
+
+
+
+
+

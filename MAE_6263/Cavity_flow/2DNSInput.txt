@@ -1,0 +1,10 @@
+128			!x points
+128			!y points
+1			!total time
+1000			!density
+.02			!viscosity
+1			!total length of square side
+50000			!time steps
+5			!Lid Velocity
+0			!Smagorinsky - 1 for additional dissipation 2 - Cebeci Smith
+1000			!Output files every these many steps
