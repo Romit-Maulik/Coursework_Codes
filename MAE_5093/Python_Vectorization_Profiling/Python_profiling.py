@@ -13,7 +13,8 @@ def init_domain():
 	dy = 2.0*np.pi/float(ny)
 
 	#Indices
-	x, y = np.meshgrid(np.arange(-dx,2.0*np.pi+dx,step=dx),np.arange(-dx,2.0*np.pi+dx,step=dx))
+	index_range = np.arange(0,nx+2)
+	x, y = np.meshgrid(dx*index_range-dx,dy*index_range-dy)
 
 	#diffusion parameter
 	alpha = 0.8
