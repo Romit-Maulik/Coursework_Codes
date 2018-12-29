@@ -95,7 +95,7 @@ def five_fold_cv(data,n_folds):
 
 #Main function
 #Global variables
-kernel_flag = 'Sqaured-exponential' #'Exponential' or 'Squared-exponential'
+kernel_flag = 'Squared-exponential' #'Exponential' or 'Squared-exponential'
 sigma = 0.101 #
 data, max_range = load_data()
 c_matrix = construct_c_matrix(data,sigma)
