@@ -1,4 +1,4 @@
-# Heat_Equation_Exp_Imp
-Solving the heat equation both explicitly and implicitly
+# Burgers equation
+
 
 Code for course project MAE 6263 - Computational fluid dynamics
