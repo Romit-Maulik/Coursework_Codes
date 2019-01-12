@@ -1,0 +1,13 @@
+5.					!Cell Peclet Number
+40.					!Global Reynolds Number
+1.0					!Lid Velocity
+1.0					!Viscous Courant Number
+2.					!Total Length in x direction
+1.					!Total Length in y direction                     
+20					!Final Time
+1					!isol;	Solver - [0] - For fully explicit [1] - For fully Implicit [2] - Viscous Implicit only
+1					!itsol; Implicit iterative solver; [0] - Gauss Jacobi [1] - Gauss Siedel
+100					!gsnt; 	Number of Iterative Steps in Jacobi/Gauss Siedel
+0					!adsc; Advection Scheme [0] - Upwind [1] - Central Difference
+5					!fostep;File output every this percent of total timesteps(Choose multiples of ten)
+10d-4				!tol; Convergence tolerance
